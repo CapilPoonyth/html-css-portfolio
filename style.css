@@ -1,0 +1,586 @@
+/*===================================================================General============================================================================================*/
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Montserrat:ital,wght@0,400;1,900&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* this (*) smybol targets the whole page
+   the (body) targets the body
+   the (html) targets the html
+   . is a class
+   shift+ alt+ page down= duplicate text*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+p{
+    color: rgb(85, 85, 85);
+}
+
+/*===================================================================Transitions=========================================================================================*/
+a,
+ .btn{
+    transition: all 300ms ease;
+}
+
+/*=====================================================================desktop nav================================================================================*/
+nav,
+.nav-links{
+    display: flex;
+}
+
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh; /* vh means view height*/
+}
+
+
+.nav-links{
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white ;
+}
+
+a:hover{
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: rgb(181, 181, 181) ;
+}
+
+.logo{
+    font-size: 2rem;
+}
+
+.logo:hover{
+    cursor: default ;
+}
+
+/*==========================================================================Hamburger menu==========================================================================*/
+#hamburger-nav{
+    display: none;
+}
+
+.hamburger-menu{
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+/* making the hamburger into x when clicking*/
+.hamburger-icon span{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out
+}
+
+.menu-links{
+    position: absolute;
+    top:100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links li{
+    list-style: none;
+}
+
+.menu-links.open {
+    max-height:300px;
+}
+
+.hamburger-icon.open span:first-child{
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child{
+    transform: none;
+}
+
+.hamburger-icon span:first-child{
+    opacity: 1;
+}
+ 
+.hamburger-icon span:first-child{
+    transform: none;
+}
+ 
+ /*=======================================================================SECTIONS==============================================================================*/
+
+ .section{
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+ }
+
+ .section-container{
+  display: flex;
+ }
+
+ /*profile*/
+ #profile{
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh
+ }
+
+ .section__pic-container{
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.section__text{
+  align-self: center;
+  text-align: center;
+}
+
+.section__text__p1{
+  text-align: center;
+}
+
+.section__text__p2{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.title{
+  font-size: 3rem;
+  text-align: center;
+}
+
+#social-buttons{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+
+}
+
+ 
+ /*====== CV button===========*/
+ .button {
+  --color: white;
+  padding: 0.8em 1.7em;
+  background-color: grey;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  gap: 1rem;
+ }
+ 
+ .button::before, .button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+ }
+ 
+ .button::before {
+  top: -1em;
+  left: -1em;
+ }
+ 
+ .button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+ }
+ 
+ .button:hover::before, .button:hover::after {
+  height: 410px;
+  width: 410px;
+ }
+ 
+ .button:hover {
+  color: rgb(10, 25, 30);
+ }
+ 
+ .button:active {
+  filter: brightness(.8);
+ }
+ 
+
+       
+ /*======Contact me button===========*/
+    .button-2 {
+      --color: black;
+      padding: 0.8em 1.7em;
+      background-color: transparent;
+      border-radius: .3em;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: .5s;
+      font-weight: 400;
+      font-size: 17px;
+      border: 1px solid;
+      font-family: inherit;
+      text-transform: uppercase;
+      color: var(--color);
+      z-index: 1;
+     }
+     
+     .button-2::before, .button-2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 50px;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+      background-color: var(--color);
+      transition: 1s ease;
+      
+     }
+     
+     .button-2::before {
+      top: -1em;
+      left: -1em;
+     }
+     
+     .button-2::after {
+      left: calc(100% + 1em);
+      top: calc(100% + 1em);
+     }
+     
+     .button-2:hover::before, .button-2:hover::after {
+      height: 410px;
+      width: 410px;
+     }
+     
+     .button-2:hover {
+      color: white;
+     }
+     
+     .button-2:active {
+      filter: brightness(.8);
+     }
+
+
+     
+
+  /*====================================about section=====================*/
+#about{
+  position: relative;
+}
+
+.about-containers{
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.about-details-container{
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers,
+.about-details-container{
+  display: flex;
+}
+
+.about-pic{ 
+  border-radius: 2rem;
+}
+
+
+
+.details-container{
+  padding: 1.5rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color:rgb(163, 163, 163);
+  text-align: center;
+}
+
+.section-container{
+  gap: 4rem;
+  height:80%;
+}
+
+.section__pic-container{
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.icon{
+  height: auto;
+  width: 50px;
+}
+.text-container{
+  text-align: center;
+  justify-content: center;
+}
+
+/*============================EXperience==========================*/
+#experience{
+  position: relative;
+}
+
+.experience-sub-title{
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.experience-details-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.article-container {
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: space-around;
+}
+
+article {
+  display: flex;
+  align-items: center; /* Center content vertically */
+  text-align: left; /* Center text horizontally */
+  width: 10rem;
+  gap: 0.5rem;
+}
+
+article .icon-check {
+  cursor: default;
+  height: auto;
+  width: 25px; /* Adjust the width as needed */
+  order: -1; /* Move the icon to the left-hand side */
+}
+
+/*project section*/
+
+#projects{
+  position: relative;
+}
+
+.color-container{
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
+}
+
+.project-img{
+  margin:1rem;
+  color: black;
+}
+
+.project-btn{
+  color: black;
+  border-color: rgb(163, 163, 163);
+}
+
+.project-img{
+  height: 400px;
+  width: auto;
+  border-radius: 1rem;
+  margin:auto 0;
+
+}
+
+/*========================contact===========================*/
+#contact{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height:70vh;
+}
+.contact-info-upper-container{
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: rgb(250, 250, 250);
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p{
+  font-size: larger;
+}
+
+.email-icon{
+  width: 50px;
+  height: 50px;
+}
+
+
+ /*============================social=========================================*/
+ .social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin-top: 0rem;
+  padding: 15px 10px;
+  border-radius: 5em;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px #00000027;
+  transition: 0.3s;
+}
+
+.social-button:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 6px 3px #00000027;
+}
+
+.social-buttons svg {
+  transition: 0.3s;
+  height: 20px;
+}
+
+.facebook {
+  background-color:  rgb(44, 44, 44);
+}
+
+.facebook svg {
+  fill: #f2f2f2;
+}
+
+.facebook:hover svg {
+  fill: #3b5998;
+}
+
+.github {
+  background-color: #333;
+}
+
+.github svg {
+  width: 25px;
+  height: 25px;
+  fill: #f2f2f2;
+}
+
+.github:hover svg {
+  fill: #333;
+}
+
+.linkedin {
+  background-color: rgb(44, 44, 44);
+}
+
+.linkedin svg {
+  fill: #f2f2f2;
+}
+
+.linkedin:hover svg {
+  fill: #0077b5;
+}
+
+.instagram {
+  background-color:  rgb(44, 44, 44);
+}
+
+.instagram svg {
+  fill: #f2f2f2;
+}
+
+.instagram:hover svg {
+  fill: #c13584;
+}
+
+/*================================footer section========================*/
+footer{
+  height: 26vh;
+  margin: 0 1rem;
+}
+
+footer p{
+  text-align: center;
+}
