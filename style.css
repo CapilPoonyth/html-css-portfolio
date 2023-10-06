@@ -348,6 +348,10 @@ a:hover{
 
 .about-pic{ 
   border-radius: 2rem;
+  width: 400px;
+    height: 400px;
+    object-fit: cover;
+
 }
 
 
@@ -365,6 +369,7 @@ a:hover{
 .section-container{
   gap: 4rem;
   height:80%;
+  display: flex;
 }
 
 .section__pic-container{
