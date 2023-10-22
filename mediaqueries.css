@@ -45,6 +45,8 @@
     .about-containers{
         margin-top:0;
     }
+
+   
 } 
 
 
@@ -85,6 +87,10 @@
 
     .experience-sub-title{
         font-size: 1.25rem;
+    }
+
+    .experience-details-container{
+        margin-top: 2rem;
     }
 
     .logo{
